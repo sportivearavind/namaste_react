@@ -1,34 +1,37 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// React.createElement => ReactElement(JS object) => HTMLElement(render)
+const Header = () => {
+    return (
+      <div className="header">
+        <div className="logo-container">
+          <img
+            className="logo"
+            src="https://i.pinimg.com/originals/39/96/57/39965743eb30634afdc5906133e19740.png"
+          ></img>
+        </div>
+        <div className="nav-items">
+          <ul>
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Contact Us</li>
+            <li>Cart</li>
+          </ul>
+        </div>
+      </div>
+    );
+}
 
+const AppLayout = () =>{
+    return(
+        <div className="app">
+            <Header/>
+        </div>
+    )
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-// JSX code is transpiled before it reaches the JS engine
-// JSX => React.createElement => ReactElement(JS object) => HTMLElement(render)
-const jsxHeading = 
-  (<h1 id="head" className="header" tabIndex="1">
-    Heading using JSX
-  </h1>)
-;
-
-const school =  <h1>Vivekananda</h1>;
-
-const ReactComponent = () => (
-  <div id="container">
-    <h1>This is React Functional Component</h1>
-  </div>
-);
-
-const student = (
-  <div>
-    {ReactComponent}
-  </div>
-);
-
-root.render(student);
+root.render(<AppLayout/>);
 
 
 
