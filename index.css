@@ -23,3 +23,29 @@
     padding: 10px;
     margin: 10px;
 }
+
+.res-card{
+    width: 200px;
+    height: 320px;
+    padding: 5px;
+    border: 1px solid black;
+    margin: 5px;
+}
+
+.res-card :hover{
+    cursor: pointer;
+}
+
+.search{
+    padding: 10px;
+}
+
+.res-logo{
+    width: 100%;
+}
+
+.res-container{
+    display: flex;
+    /* Items will flow to next line if there is no space if we use wrap*/
+    flex-wrap: wrap;  
+}
