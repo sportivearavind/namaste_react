@@ -1,15 +1,34 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+// React.createElement => ReactElement(JS object) => HTMLElement(render)
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const parent = React.createElement("div",{id:"parent"},
-    React.createElement("div",{id:"children"},[
-        React.createElement("h1",{id:"gc1"},"I am the first grandChild"),
-        React.createElement("h2",{id:"gc2"},"I am the second grandChild")
-    ])
-)
+// JSX code is transpiled before it reaches the JS engine
+// JSX => React.createElement => ReactElement(JS object) => HTMLElement(render)
+const jsxHeading = 
+  (<h1 id="head" className="header" tabIndex="1">
+    Heading using JSX
+  </h1>)
+;
 
-root.render(parent);
+const school =  <h1>Vivekananda</h1>;
+
+const ReactComponent = () => (
+  <div id="container">
+    <h1>This is React Functional Component</h1>
+  </div>
+);
+
+const student = (
+  <div>
+    {ReactComponent}
+  </div>
+);
+
+root.render(student);
+
 
 
