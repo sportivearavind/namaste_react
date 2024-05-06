@@ -2,48 +2,52 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 const Header = () => {
-    return (
-      <div className="header">
-        <div className="logo-container">
-          <img
-            className="logo"
-            src="https://i.pinimg.com/originals/39/96/57/39965743eb30634afdc5906133e19740.png"
-          ></img>
-        </div>
-        <div className="nav-items">
-          <ul>
-            <li>Home</li>
-            <li>About Us</li>
-            <li>Contact Us</li>
-            <li>Cart</li>
-          </ul>
-        </div>
-      </div>
-    );
-}
-
-
-const RestaurantCard = (props) =>{
-    const {resData} = props;
-    return (
-      <div
-        className="res-card"
-        style={{
-          backgroundColor: "#f0f0f0",
-        }}
-      >
+  return (
+    <div className="header">
+      <div className="logo-container">
         <img
-          className="res-logo"
-          alt="res-logo"
-          src = {"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+ resData.info.cloudinaryImageId}
+          className="logo"
+          src="https://i.pinimg.com/originals/39/96/57/39965743eb30634afdc5906133e19740.png"
         ></img>
-        <h2>{resData.info.name}</h2>
-        <h3>{resData.info.locality}</h3>
-        <h3>{resData.info.avgRating + " stars"}</h3>
-        <h3>{resData.info.costForTwo}</h3>
       </div>
-    );
-}
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+const RestaurantCard = (props) => {
+  const { resData } = props;
+  const { cloudinaryImageId, name, locality, avgRating, costForTwo } =
+    resData?.info;
+  return (
+    <div
+      className="res-card"
+      style={{
+        backgroundColor: "#f0f0f0",
+      }}
+    >
+      <img
+        className="res-logo"
+        alt="res-logo"
+        src={
+          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
+          cloudinaryImageId
+        }
+      ></img>
+      <h2>{name}</h2>
+      <h3>{locality}</h3>
+      <h3>{avgRating + " stars"}</h3>
+      <h3>{costForTwo}</h3>
+    </div>
+  );
+};
 
 const resList = [
   {
@@ -1432,38 +1436,28 @@ const resList = [
     },
   },
 ];
-                              
 
 const Body = () => {
-    return (
-        <div className="body">
-            <div className="search">Search</div>
-            <div className="res-container">
-                <RestaurantCard resData = {resList[0]} />
-                <RestaurantCard resData = {resList[1]} />
-                <RestaurantCard resData = {resList[3]} />
-                <RestaurantCard resData = {resList[4]} />
-                <RestaurantCard resData = {resList[5]} />
-                <RestaurantCard resData = {resList[6]} />
-                <RestaurantCard resData = {resList[7]} />
-                <RestaurantCard resData = {resList[8]} />
-                
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className="body">
+      <div className="search">Search</div>
+      <div className="res-container">
+        {resList.map((restaurant) => (
+          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+        ))}
+      </div>
+    </div>
+  );
+};
 
-const AppLayout = () =>{
-    return(
-        <div className="app">
-            <Header/>
-            <Body/>
-        </div>
-    )
-}
+const AppLayout = () => {
+  return (
+    <div className="app">
+      <Header />
+      <Body />
+    </div>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout/>);
-
-
-
+root.render(<AppLayout />);
