@@ -48,3 +48,8 @@
     /* Items will flow to next line if there is no space if we use wrap*/
     flex-wrap: wrap;  
 }
+
+.filter-btn{
+    margin: 10px;
+    cursor: pointer;
+}
