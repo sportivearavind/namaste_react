@@ -21,43 +21,54 @@ const Body = () => {
     const json = await data.json();
     console.log(json);
     // updating listOfRestaurants to re-render the component finally
-    // setListOfRestaurants(json.data.cards);
-    // setFilteredRestaurant(json.data.cards);
+    setListOfRestaurants(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setFilteredRestaurant(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
 
   // Conditional rendering
-  if(listOfRestaurants.length === 0){
-    return <Shimmer/>;
-  }
+  // if(listOfRestaurants.length === 0){
+  //   return <Shimmer/>;
+  // }
 
-  return (
+  return listOfRestaurants.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter">
         <div className="search">
-          <input type="text" 
-          value={searchText} 
-          className="search-box" 
-          onChange={(e)=>{
-            setSearchText(e.target.value);
-          }} 
+          <input
+            type="text"
+            value={searchText}
+            className="search-box"
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
           />
-          <button onClick={()=>{
-            // filter the restaurants
-            const filteredList = listOfRestaurants.filter((res)=>{
-              res.info.name.toLowerCase().includes(searchText);
-            });
-            setFilteredRestaurant(filteredList);
-
-          }}>Search</button>
+          <button
+            className="searchBtn"
+            onClick={() => {
+              // filter the restaurants
+              const filteredList = listOfRestaurants.filter((res) => {
+                return res.info.name.toLowerCase().includes(searchText.toLowerCase());
+              });
+              setFilteredRestaurant(filteredList);
+            }}
+          >
+            Search
+          </button>
         </div>
         <button
           className="filter-btn"
           onClick={() => {
-            let filteredList = listOfRestaurants.filter(
+            let filteredRest = listOfRestaurants.filter(
               (res) => res.info.avgRating > 4
             );
-            setListOfRestaurants(filteredList);
-            console.log(filteredList);
+            setFilteredRestaurant(filteredRest);
+            console.log(filteredRest);
           }}
         >
           Top Rated Restaurant
