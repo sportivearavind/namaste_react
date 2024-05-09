@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   // Local State Variable
@@ -53,7 +54,9 @@ const Body = () => {
             onClick={() => {
               // filter the restaurants
               const filteredList = listOfRestaurants.filter((res) => {
-                return res.info.name.toLowerCase().includes(searchText.toLowerCase());
+                return res.info.name
+                  .toLowerCase()
+                  .includes(searchText.toLowerCase());
               });
               setFilteredRestaurant(filteredList);
             }}
@@ -76,7 +79,12 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredRestaurant.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          <Link
+            key={restaurant.info.id}
+            to={"/restaurants/" + restaurant.info.id}
+          >
+            <RestaurantCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
