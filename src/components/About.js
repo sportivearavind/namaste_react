@@ -6,21 +6,20 @@ import React from "react";
 class About extends React.Component {
   constructor(props) {
     super(props);
-    console.log("Parent Constructor");
+    // console.log("Parent Constructor");
   }
 
   componentDidMount() {
-    console.log("Parent ComponentDidMount Called");
+    // console.log("Parent ComponentDidMount Called");
   }
 
   render() {
-    console.log("Parent Render");
+    // console.log("Parent Render");
     return (
       <div>
         <h1>About Class Based Component</h1>
         <h2>This is the about section</h2>
         <UserClass name={"Aravind"} />
-        <UserClass name={"Dhoni"} />
       </div>
     );
   }
