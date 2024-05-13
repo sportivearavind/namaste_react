@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {withIsOpenLabel} from "./RestaurantCard";
 import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
@@ -10,6 +10,10 @@ const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurant,setFilteredRestaurant] = useState([]);
+
+  const RestaurantCardIsOpen = withIsOpenLabel(RestaurantCard);
+
+  console.log("Body Rendered", listOfRestaurants);
 
   useEffect(() => {
     fetchData();
@@ -91,7 +95,11 @@ const Body = () => {
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant} />
+            {restaurant.info.isOpen ? (
+              <RestaurantCardIsOpen resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>
