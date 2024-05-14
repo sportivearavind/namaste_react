@@ -11,8 +11,6 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurant,setFilteredRestaurant] = useState([]);
 
-  console.log("body rendered");
-
   const RestaurantCardIsOpen = withIsOpenLabel(RestaurantCard);
 
   useEffect(() => {
