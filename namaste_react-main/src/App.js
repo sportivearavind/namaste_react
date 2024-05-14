@@ -59,3 +59,7 @@ const appRoute = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRoute} />);
+
+if (module.hot) {
+  module.hot.accept();
+}
