@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState, useEffect } from "react";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import { createBrowserRouter , RouterProvider, Outlet} from "react-router-dom";
@@ -9,16 +9,32 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 // import Grocery from "./components/Grocery";
+import UserContext from "./utils/UserContext";
+import { createContext } from "react";
 
 
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const AppLayout = () => {
+
+  const [userName, setUserName] = useState();
+
+  //authentication
+  useEffect(() => {
+    // Make and API call and send username and password
+    const data = {
+      name: "Aravind",
+    };
+    setUserName(data.name);
+  },[]);
+
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-    </div>
+    <UserContext.Provider value={{loggedInUser: userName,setUserName}}>
+      <div className="app">
+        <Header />
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   );
 };
 
@@ -60,6 +76,6 @@ const appRoute = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRoute} />);
 
-if (module.hot) {
-  module.hot.accept();
-}
+// if (module.hot) {
+//   module.hot.accept();
+// }
