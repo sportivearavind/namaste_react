@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1715945493609" clover="3.2.0">
-  <project timestamp="1715945493610" name="All files">
-    <metrics statements="74" coveredstatements="62" conditionals="10" coveredconditionals="6" methods="28" coveredmethods="19" elements="112" coveredelements="87" complexity="0" loc="74" ncloc="74" packages="2" files="13" classes="13"/>
+<coverage generated="1715946288109" clover="3.2.0">
+  <project timestamp="1715946288109" name="All files">
+    <metrics statements="74" coveredstatements="66" conditionals="10" coveredconditionals="6" methods="28" coveredmethods="21" elements="112" coveredelements="93" complexity="0" loc="74" ncloc="74" packages="2" files="13" classes="13"/>
     <package name="components">
-      <metrics statements="54" coveredstatements="47" conditionals="10" coveredconditionals="6" methods="21" coveredmethods="17"/>
+      <metrics statements="54" coveredstatements="51" conditionals="10" coveredconditionals="6" methods="21" coveredmethods="19"/>
       <file name="Body.js" path="C:\Users\aravi\Desktop\namaste-react\namaste_react-main\src\components\Body.js">
-        <metrics statements="28" coveredstatements="22" conditionals="6" coveredconditionals="4" methods="10" coveredmethods="7"/>
+        <metrics statements="28" coveredstatements="26" conditionals="6" coveredconditionals="4" methods="10" coveredmethods="9"/>
         <line num="10" count="1" type="stmt"/>
-        <line num="12" count="4" type="stmt"/>
-        <line num="13" count="4" type="stmt"/>
-        <line num="14" count="4" type="stmt"/>
-        <line num="16" count="4" type="stmt"/>
-        <line num="18" count="4" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="22" count="4" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
-        <line num="38" count="4" type="stmt"/>
-        <line num="40" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="12" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="14" count="7" type="stmt"/>
+        <line num="16" count="7" type="stmt"/>
+        <line num="18" count="7" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="22" count="7" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="38" count="7" type="stmt"/>
+        <line num="40" count="7" type="cond" truecount="1" falsecount="1"/>
         <line num="41" count="0" type="stmt"/>
-        <line num="49" count="4" type="stmt"/>
-        <line num="51" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="49" count="7" type="stmt"/>
+        <line num="51" count="7" type="cond" truecount="2" falsecount="0"/>
         <line num="63" count="1" type="stmt"/>
         <line num="70" count="1" type="stmt"/>
         <line num="71" count="20" type="stmt"/>
         <line num="75" count="1" type="stmt"/>
-        <line num="85" count="0" type="stmt"/>
-        <line num="86" count="0" type="stmt"/>
-        <line num="88" count="0" type="stmt"/>
-        <line num="89" count="0" type="stmt"/>
+        <line num="85" count="1" type="stmt"/>
+        <line num="86" count="20" type="stmt"/>
+        <line num="88" count="1" type="stmt"/>
+        <line num="89" count="1" type="stmt"/>
         <line num="100" count="0" type="stmt"/>
-        <line num="106" count="41" type="stmt"/>
+        <line num="106" count="75" type="stmt"/>
       </file>
       <file name="Contact.js" path="C:\Users\aravi\Desktop\namaste-react\namaste_react-main\src\components\Contact.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -61,18 +61,18 @@
       <file name="RestaurantCard.js" path="C:\Users\aravi\Desktop\namaste-react\namaste_react-main\src\components\RestaurantCard.js">
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="3" count="1" type="stmt"/>
-        <line num="4" count="41" type="stmt"/>
-        <line num="5" count="41" type="stmt"/>
-        <line num="7" count="41" type="stmt"/>
-        <line num="9" count="41" type="stmt"/>
+        <line num="4" count="75" type="stmt"/>
+        <line num="5" count="75" type="stmt"/>
+        <line num="7" count="75" type="stmt"/>
+        <line num="9" count="75" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
-        <line num="28" count="4" type="stmt"/>
-        <line num="29" count="41" type="stmt"/>
+        <line num="28" count="7" type="stmt"/>
+        <line num="29" count="75" type="stmt"/>
       </file>
       <file name="Shimmer.js" path="C:\Users\aravi\Desktop\namaste-react\namaste_react-main\src\components\Shimmer.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
       </file>
       <file name="sum.js" path="C:\Users\aravi\Desktop\namaste-react\namaste_react-main\src\components\sum.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -112,13 +112,13 @@
       <file name="useOnlineStatus.js" path="C:\Users\aravi\Desktop\namaste-react\namaste_react-main\src\utils\useOnlineStatus.js">
         <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
         <line num="4" count="2" type="stmt"/>
-        <line num="5" count="8" type="stmt"/>
-        <line num="7" count="8" type="stmt"/>
-        <line num="8" count="8" type="stmt"/>
+        <line num="5" count="11" type="stmt"/>
+        <line num="7" count="11" type="stmt"/>
+        <line num="8" count="11" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
-        <line num="12" count="8" type="stmt"/>
+        <line num="12" count="11" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
-        <line num="18" count="8" type="stmt"/>
+        <line num="18" count="11" type="stmt"/>
       </file>
     </package>
   </project>

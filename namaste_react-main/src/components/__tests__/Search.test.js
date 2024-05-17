@@ -15,7 +15,7 @@ global.fetch = jest.fn(() => {
     })
 });
 
-
+// Search feature
 it("Should search resList for burger text input", async () => {
     await act(async () =>
       render(
@@ -41,4 +41,28 @@ it("Should search resList for burger text input", async () => {
 
     expect(cardsAfterSearch.length).toBe(1);
  
-})
+});
+
+// Top Rated Restaurant feature
+it("Should filter Top Rated Restaurant", async () => {
+    await act(async () =>
+      render(
+        <BrowserRouter>
+          <Body />
+        </BrowserRouter>
+      )
+    );
+
+    const cardsBeforeFilter = screen.getAllByTestId("resCard");
+
+    expect(cardsBeforeFilter.length).toBe(20);
+
+    const topRatedBtn = screen.getByRole("button", {name: "Top Rated Restaurant"});
+
+    fireEvent.click(topRatedBtn);
+
+    const cardsAfterFilter = screen.getAllByTestId("resCard");
+
+    expect(cardsAfterFilter.length).toBe(14);
+ 
+});
